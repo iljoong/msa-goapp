@@ -1,0 +1,40 @@
+apiVersion: v1
+kind:  Service
+metadata:
+  name: besvcvid
+  namespace: default
+  labels:
+    app: besvcvid
+spec:
+  ports:
+    - port: 36060
+      targetPort: 36060
+  selector:
+    app: besvcvid
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: besvcvid
+  namespace: default
+  labels:
+    app: besvcvid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: besvcvid
+  template:
+    metadata:
+      name: besvcvid
+      labels:
+        app: besvcvid
+    spec:
+      containers:
+      - name: besvcvid
+        image: iljoong/besvc
+        env:
+        - name: GO_SCHTYPE
+          value: videos
+      imagePullSecrets:
+      - name: ""

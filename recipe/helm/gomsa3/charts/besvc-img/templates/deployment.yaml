@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  namespace: default
+  labels:
+    app: {{ .Values.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      name: {{ .Values.name }}
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions: 
+                - key: "failure-domain.beta.kubernetes.io/zone"
+                  operator: In
+                  values: [  {{ .Values.zone | quote }} ]    
+      containers:
+      - name: {{ .Values.name }}
+        image: {{ .Values.image }}
+        env:
+        - name: GO_SCHTYPE
+          value: {{ .Values.type }}
+      {{ if .Values.reposecret }}          
+      imagePullSecrets:
+      - name: {{ .Values.reposecret }}
+      {{ end }}

@@ -1,0 +1,4 @@
+apiVersion: v1
+description: GOMSA demo 1 - sequential, timeout 200
+name: gomsa1
+version: 0.1.0

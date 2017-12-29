@@ -1,0 +1,7 @@
+reposecret: ""
+name: besvcimg
+image: iljoong/besvc
+containerport: 36060
+type: images
+servers: besvcimg:36060
+zone: 1

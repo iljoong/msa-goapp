@@ -1,0 +1,40 @@
+apiVersion: v1
+kind:  Service
+metadata:
+  name: besvcimg
+  namespace: default
+  labels:
+    app: besvcimg
+spec:
+  ports:
+    - port: 36060
+      targetPort: 36060
+  selector:
+    app: besvcimg
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: besvcimg
+  namespace: default
+  labels:
+    app: besvcimg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: besvcimg
+  template:
+    metadata:
+      name: besvcimg
+      labels:
+        app: besvcimg
+    spec:
+      containers:
+      - name: besvcimg
+        image: iljoong/besvc
+        env:
+        - name: GO_SCHTYPE
+          value: images
+      imagePullSecrets:
+      - name: ""

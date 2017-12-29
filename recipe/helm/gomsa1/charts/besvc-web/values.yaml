@@ -1,0 +1,8 @@
+reposecret: ""
+
+name: besvcweb
+image: iljoong/besvc
+containerport: 36060
+type: web
+servers: besvcweb:36060
+zone: 0

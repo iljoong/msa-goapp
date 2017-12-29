@@ -1,0 +1,21 @@
+reposecret: ""
+
+frontend:
+  name: fesvcmsa3
+  image: iljoong/fesvc:0.68
+  containerport: 8888
+  containerport_debug: 8889
+  besvcweb: besvcweb:36060,besvcweb2:36060
+  besvcimg: besvcimg:36060,besvcimg2:36060
+  besvcvid: besvcvid:36060,besvcvid2:36060
+  timeout: 200
+
+besvcimg:
+  reposecret: ""
+  image: iljoong/besvc:0.68
+besvcvid:
+  reposecret: ""
+  image: iljoong/besvc:0.68
+besvcweb:
+  reposecret: ""
+  image: iljoong/besvc:0.68

@@ -1,0 +1,8 @@
+reposecret: ""
+
+name: besvcvid
+image: iljoong/besvc
+containerport: 36060
+type: videos
+servers: besvcvid:36060
+zone: 2

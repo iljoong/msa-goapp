@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.frontend.name }}
+  labels:
+    app: {{ .Values.frontend.name }}
+spec:
+  type: LoadBalancer
+  ports:
+  - name: web
+    port: 80
+    targetPort: {{ .Values.frontend.containerport }}
+  - name: debug
+    port: 88
+    targetPort: {{ .Values.frontend.containerport_debug }}
+  selector:
+    app: {{ .Values.frontend.name }}

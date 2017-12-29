@@ -1,0 +1,10 @@
+reposecret: ""
+
+frontend:
+  name: fesvcmsa2
+  image: iljoong/fesvc
+  containerport: 8889
+  besvcweb: besvcweb:36060
+  besvcimg: besvcimg:36060
+  besvcvid: besvcvid:36060
+  timeout: 200
