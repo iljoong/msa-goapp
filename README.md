@@ -20,7 +20,7 @@ This demo app demonstrates how to build a web-scale (agile, fault & variance, va
 
 0. Test App on local environment
 
-    Move [./test](./test) directory
+    Move [test](./test) directory
 
     Run `runtest.ps1` and/or `slotest.ps1`
 
@@ -28,13 +28,13 @@ This demo app demonstrates how to build a web-scale (agile, fault & variance, va
 
     Use `Azure acs / acs-engine` to deploy K8S cluster
 
-    For more information, see [./recipe/kube.md](./recipe/kube.md)
+    For more information, see [recipe/acs.md](./recipe/acs.md)
 
 2. Build Docker Image
 
-    Build docker images for frontend & backend app in [./src](./src)
+    Build docker images for frontend & backend app in [src](./src)
 
-    For build and local test for docker images, see [./recipe/docker.md](./recipe/docker.md)
+    For build and local test for docker images, see [recipe/docker.md](./recipe/docker.md)
 
     or use public docker hub image
 
@@ -42,13 +42,13 @@ This demo app demonstrates how to build a web-scale (agile, fault & variance, va
 
     Use sample yaml file to deploy frontend/backend app to K8S
 
-    For more information, see [./recipe/kube.md](./recipe/kube.md)
+    For more information, see [recipe/kube.md](./recipe/kube.md)
 
 4. Deploy Search Service
 
     Use `Helm` to deploy demo app
 
-    For more information, see [./recipe/helm.md](./recipe/helm.md)
+    For more information, see [recipe/helm.md](./recipe/helm.md)
 
 5. Integrate with VSTS (CI/CD)
 
@@ -56,7 +56,7 @@ This demo app demonstrates how to build a web-scale (agile, fault & variance, va
 
     Create build & release definition
 
-    For more information, see [./recipe/vsts.md](./recipe/vsts.md)
+    For more information, see [recipe/vsts.md](./recipe/vsts.md)
 
 ## Reference
 
